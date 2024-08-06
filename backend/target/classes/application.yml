@@ -7,4 +7,4 @@ spring:
       prod:
         - prod
         - shared
-    active: local
+    active: prod
