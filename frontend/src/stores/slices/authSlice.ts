@@ -83,6 +83,7 @@ const authSlice = createSlice({
       state.loading = true;
     },
     changeUserAvatarSuccess: (state, action: PayloadAction<string>) => {
+      console.log("🚀 ~ action:", action)
       state.loading = false;
       state.currentUser = { ...state.currentUser, picture: action.payload };
       Cookies.set('user', JSON.stringify(state.currentUser));

@@ -26,9 +26,9 @@ public class TwoFactorAuthenticationServiceImpl implements TwoFactorAuthenticati
     @Override
     public String generateQrCodeImageUri(String secret) {
         QrData data = new QrData.Builder()
-                .label("Spring Security")
+                .label("QueueOverflow")
                 .secret(secret)
-                .issuer("nemisolv-coding")
+                .issuer("nemisolv")
                 // using SHA-1 hashing algorithm (force)
                 .algorithm(HashingAlgorithm.SHA1)
                 .digits(6)

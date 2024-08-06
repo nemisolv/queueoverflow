@@ -128,7 +128,9 @@ export default function Register() {
                                 <FormLabel className=" paragraph-medium">Password</FormLabel>
                                 <FormControl >
                                     <div className="relative">
-                                        <Input  {...field} type={showPassword ? 'text' : 'password'} className="no-focus paragraph-regular placeholder:body-regular    min-h-[46px] light-border-2 border  text-dark200_light700  transition-all transform pr-[40px]" />
+                                        <Input  {...field} type={showPassword ? 'text' : 'password'} className="no-focus paragraph-regular placeholder:body-regular    min-h-[46px] light-border-2 border  text-dark200_light700  transition-all transform pr-[40px]" 
+                                        placeholder="password..."
+                                        />
                                         <img src={`/assets/icons/${showPassword ? 'eye' : 'eye-close'}.svg`} alt="" className="absolute top-2/4 right-[10px] -translate-y-2/4 transition-all transform" onClick={() => setShowPassword(!showPassword)} />
                                     </div>
                                 </FormControl>

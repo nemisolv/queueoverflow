@@ -1,5 +1,6 @@
 package com.nemisolv.config;
 
+import com.nemisolv.util.Constants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -15,8 +16,8 @@ public class WebConfig {
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-//        config.setAllowCredentials(true);
-        config.addAllowedOrigin("*"); // Allow requests from this origin
+        config.setAllowCredentials(true);
+        config.addAllowedOrigin(Constants.CLIENT_BASE_URL); // Allow requests from this origin
 //        config.
         config.addAllowedHeader("*");
         config.addAllowedMethod("OPTIONS");

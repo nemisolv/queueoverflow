@@ -119,8 +119,6 @@ public class User implements UserDetails, OAuth2User {
 
 
 
-
-
     @CreatedDate
     @Column(updatable = false, nullable = false, name = "created_at")
     private LocalDateTime createdAt;

@@ -16,7 +16,10 @@ import com.nemisolv.repository.AnswerRepository;
 import com.nemisolv.repository.QuestionRepository;
 import com.nemisolv.service.UserService;
 import com.nemisolv.util.FileUploadUtils;
+import jakarta.persistence.FetchType;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -271,6 +274,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Fetch(FetchMode.SELECT)
     public FullUserInfoDTO getFullInfoOfCurrentUser(User currentUser) {
         return modelMapper.map(currentUser, FullUserInfoDTO.class);
     }

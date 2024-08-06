@@ -29,7 +29,7 @@ export function RightSidebar() {
                         <div className="mt-7 flex w-full flex-col gap-[30px] ">
 
                             {hotQuestions.slice(0, 10).map(question => (
-                                <Link to={`/questions/${question.id}`}
+                                <Link to={`/questions/${question.slug}`}
                                     key={question.id}
                                     className="flex cursor-pointer items-center justify-between gap-7"
                                 >

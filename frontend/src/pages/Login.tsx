@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input"
 import { loginSchema } from "@/lib/validation"
 import { useState } from "react"
 import { login } from "@/stores/slices/authSlice"
-import {  useAppDispatch, useAppSelector } from "@/stores/hooks"
+import { useAppDispatch, useAppSelector } from "@/stores/hooks"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { GITHUB_AUTH_URL, GOOGLE_AUTH_URL } from "@/configs"
 export default function Login() {
@@ -35,7 +35,7 @@ export default function Login() {
     })
 
     const onSubmit = (values: z.infer<typeof loginSchema>) => {
-      
+
         dispatch(login({
             email: values.email,
             password: values.password,
@@ -73,7 +73,7 @@ export default function Login() {
 
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
-                <FormField
+                    <FormField
                         control={form.control}
                         name="email"
                         render={({ field }) => (
@@ -95,7 +95,7 @@ export default function Login() {
                                 <FormLabel className=" paragraph-medium">Password</FormLabel>
                                 <FormControl >
                                     <div className="relative">
-                                        <Input  {...field} type={showPassword ? 'text' : 'password'} className="no-focus paragraph-regular placeholder:body-regular    min-h-[46px] light-border-2 border  text-dark200_light700  transition-all transform pr-[40px]" />
+                                        <Input  {...field} type={showPassword ? 'text' : 'password'} className="no-focus paragraph-regular placeholder:body-regular    min-h-[46px] light-border-2 border  text-dark200_light700  transition-all transform pr-[40px]" placeholder="password..." />
                                         <img src={`/assets/icons/${showPassword ? 'eye' : 'eye-close'}.svg`} alt="" className="absolute top-2/4 right-[10px] -translate-y-2/4 transition-all transform" onClick={() => setShowPassword(!showPassword)} />
                                     </div>
                                 </FormControl>

@@ -90,7 +90,8 @@ private final RoleRepository roleRepo;
     }
 
     private User updateExistingUser(User existingUser, OAuth2UserInfo oauth2UserInfo, OAuth2UserRequest userRequest) {
-        existingUser.setPicture(oauth2UserInfo.getImageUrl());
+        // allow user to update photo
+//        existingUser.setPicture(oauth2UserInfo.getImageUrl());
         existingUser.setProviderId(oauth2UserInfo.getId());
         existingUser.setAuthProvider(AuthProvider.getEnum(userRequest.getClientRegistration().getRegistrationId()));
         return userRepo.save(existingUser);

@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.nemisolv</groupId>
-    <artifactId>stackoverflow-cloning</artifactId>
+    <artifactId>stackoverflow-clone</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>stackoverflow - side project</name>
     <description>

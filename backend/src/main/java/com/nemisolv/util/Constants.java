@@ -7,7 +7,7 @@ public class Constants {
     public static final LocalDateTime EXP_TIME_REGISTRATION_EMAIL= LocalDateTime.now().plusMinutes(15);
     public static final LocalDateTime EXP_TIME_RESET_PASSWORD_EMAIL= LocalDateTime.now().plusMinutes(15);
 
-    public static final String CLIENT_BASE_URL = "https://queue-overflow-g0d20y8mu-nemisolvs-projects.vercel.app";
+    public static final String CLIENT_BASE_URL = "http://localhost:3000";
     public static final String UPLOAD_DIR_PREFIX = "queueoverflow";
 
 }

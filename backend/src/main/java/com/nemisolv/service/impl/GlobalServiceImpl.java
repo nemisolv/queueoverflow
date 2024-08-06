@@ -67,7 +67,7 @@ public class GlobalServiceImpl implements GlobalService {
                     // search question
                     List<Question> questions = questionRepo.searchByTitleValidQuestions(query, pageable);
                     questions.forEach(question -> {
-                        response.add(new GlobalSearchResponse(question.getId(), question.getTitle(), "question"));
+                        response.add(new GlobalSearchResponse(question.getId(), question.getTitle(), question.getSlug(),"question" ));
                     });
 
                     break;
