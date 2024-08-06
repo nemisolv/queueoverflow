@@ -1,0 +1,74 @@
+spring:
+  application:
+    name: queueoverflow
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 1MB
+      max-request-size: 10MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/stackoverflow
+#    url: jdbc:mysql://root:JTyOsyVIdfrlcKldSFejmaugDffzeqll@viaduct.proxy.rlwy.net:53752/queueoverflow
+    username: root
+#    password: JTyOsyVIdfrlcKldSFejmaugDffzeqll
+    password: nam123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 307016981465-g2564h7rrpd4ek4jj4mph8378o95o524.apps.googleusercontent.com
+            clientSecret: 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
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - profile
+          facebook:
+            clientId: 1106813467180481
+            clientSecret: 7ffa2355ccf06f28aee9c121909e45c7
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - public_profile
+          github:
+            clientId: d3e47fc2ddd966fa4352
+            clientSecret: 3bc0f6b8332f93076354c2a5bada2f5a05aea60d
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - user:email
+              - read:user
+        provider:
+          facebook:
+            authorizationUri: https://www.facebook.com/v3.0/dialog/oauth
+            tokenUri: https://graph.facebook.com/v3.0/oauth/access_token
+            userInfoUri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,picture
+
+
+
+app:
+  secure:
+    jwt:
+      secret-key: MHQCAQEEIEYgBlyQVsH7SpHUH7x4RErcckhu7ary/JjhP72Nk19EoAcGBSuBBAAKoUQDQgAE1MtHIxlGP5TARqBccrddNm1FnYH1Fp+onETz5KbXPSeG5FGwKMUXGfAmSZJq2gENULFewwymt+9bTXkjBZhh8A==
+      token-expire: 86400000
+      refreshToken-expire: 604800000
+  ai:
+    gpt-secret-key: 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
+  cors:
+    allowedOrigins: http://localhost:3000,http://localhost:8080, https://queue-overflow-g0d20y8mu-nemisolvs-projects.vercel.app
+  oauth2:
+    # After successfully authenticating with the OAuth2 Provider,
+    # we'll be generating an auth token for the user and sending the token to the
+    # redirectUri mentioned by the client in the /oauth2/authorize request.
+    # We're not using cookies because they won't work well in mobile clients.
+    authorizedRedirectUris:
+      - http://localhost:3000/oauth2/redirect
+      - https://queue-overflow-g0d20y8mu-nemisolvs-projects.vercel.app
